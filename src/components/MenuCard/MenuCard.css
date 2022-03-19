@@ -1,0 +1,15 @@
+.menucard {
+    width: 32%;
+    margin-top: 24px;
+    margin-left: 1%;
+    text-decoration: none;
+}
+
+.menucard__content {
+    height: 100%;
+}
+
+.p-card-header {
+    padding-left: 4%;
+    padding-top: 4%;
+}

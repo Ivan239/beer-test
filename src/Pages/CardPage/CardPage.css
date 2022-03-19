@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap');
+
+.cardPage {
+    margin-top: 24px;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.cardPage__content {
+    width: 40%;
+}
+
+.cardPage p {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    text-align: left;
+}
+
+.cardPage h1 {
+    font-family: 'Teko', sans-serif;
+    font-size: 40px;
+    margin: 0;
+    color: rgb(24, 24, 24);
+}
+
+.cardPage h2 {
+    font-family: 'Teko', sans-serif;
+    margin: 0;
+    color: rgb(24, 24, 24);
+}
+
+.cardPage__image {
+    max-width: 30%;
+    max-height: 400px;
+}
+
+.cardPage h4 {
+    margin: 0 0 0 0;
+    padding: 4px 4px 4px 8px;
+}
+
+.cardPage__favourite {
+    cursor: pointer;
+    max-width: 112px;
+    border: 1px solid black;
+    border-radius: 8px;
+    display: flex;
+    box-shadow: none;
+    transition-property: background-color, box-shadow;
+    transition-duration: 0.25s;
+    transition-timing-function: ease;
+}
+
+.cardPage__favourite:hover {
+    background-color: rgb(240, 240, 240);
+    box-shadow: rgba(6, 5, 50, 0.12) 2px 2px 2px;
+}
+
+.cardPage__star {
+    position: relative;
+    padding: 4px 4px 4px 4px;
+}
