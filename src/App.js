@@ -15,7 +15,7 @@ function App() {
   store.dispatch(loadCart(JSON.parse(localStorage.getItem('favourites'))))
   return (
     <div className="App">
-      <BrowserRouter >
+      <BrowserRouter basename="/beer-test">
         <Header />
         <Routes>
           <Route path="/" element={<Main />} />
