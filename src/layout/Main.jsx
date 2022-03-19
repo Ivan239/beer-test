@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Cards from '../components/Cards/Cards'
 import store from '../redux/store/store';
 import './Main.css'
+import preloader from '../assets/preloader.gif'
 
 
 export class Main extends Component {
@@ -24,12 +25,11 @@ export class Main extends Component {
     render() {
         store.subscribe(() => {
             localStorage.setItem('favourites', JSON.stringify(store.getState().favourite))
-            console.log(localStorage.getItem('favourites'))
         })
 
         return (
             <div className='main'>
-                <Cards beers={this.state.beers} />
+                { this.state.loading ? <img src={preloader} alt="loading..." className='main__preloader' /> : <Cards beers={this.state.beers} />}
             </div>
         )
     }

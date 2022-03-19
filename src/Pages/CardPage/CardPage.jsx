@@ -3,18 +3,22 @@ import { useParams } from "react-router-dom"
 import { addBeer, deleteBeer } from "../../redux/favourite/actions";
 import store from "../../redux/store/store";
 import './CardPage.css'
-import axios from 'axios';
+import preloader from '../../assets/preloader.gif'
 
 function CardPage() {
     const { itemId } = useParams();
     const [beer, setBeer] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        const fetchData = async () => {
-            const result = await axios(`https://api.punkapi.com/v2/beers/${itemId}`)
-            setBeer(result.data[0])
-        }
-        fetchData();
+        fetch(`https://api.punkapi.com/v2/beers/${itemId}`)
+            .then((response) => response.json())
+            .then((data) => setBeer(data[0]))
+            .then(setLoading(false))
+            .catch((err) => {
+                console.error(err);
+                this.setState({ loading: false });
+            });
     }, [itemId])
 
     const checkFav = () => {
@@ -45,8 +49,7 @@ function CardPage() {
             store.dispatch(deleteBeer(beer.id))
         }
     }
-
-    return (
+    return !loading ? (
         <div className="cardPage">
             <img src={beer.image_url} alt={beer.name} className="cardPage__image" />
             <div className="cardPage__content">
@@ -60,7 +63,7 @@ function CardPage() {
                 </div>
             </div>
         </div>
-    )
+    ) :  <img src={preloader} alt="loading..." className='cardPage__preloader' />
 }
 
 export default CardPage
