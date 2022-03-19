@@ -19,10 +19,8 @@ function CardPage() {
 
     const checkFav = () => {
         const icons = store.getState().favourite
-        console.log(icons, 'icons')
         if (icons) {
             for (let i = 0; i < icons.length; i++) {
-                console.log(icons[i].id.toString(), itemId)
                 if (icons[i].id.toString() === itemId) {
                     return true
                 }
@@ -32,13 +30,7 @@ function CardPage() {
         return false
     }
 
-
-
     const [isFav, setIsFav] = useState(checkFav())
-
-    useEffect(() => {
-        console.log(isFav, 'in ue')
-    }, [isFav])
 
     const toggleFav = () => {
         if (isFav === false) {
