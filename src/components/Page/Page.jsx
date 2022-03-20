@@ -1,16 +1,18 @@
-import { Button } from 'primereact/button';
-import { NavLink } from 'react-router-dom';
-import './Page.css'
+import {Button} from 'primereact/button';
+import {NavLink} from 'react-router-dom';
+import './Page.css';
+import React from 'react';
 
 function Page(props) {
-    const { id, page } = props
+  const {id, page} = props;
 
-    return (
-        <NavLink to={`/page/${id}`} className='pageButton' >
-            {page === id.toString() ? <Button label={id+1} className='p-button-raised' /> :
-            <Button label={id+1} className='p-button-outlined' />}
-        </NavLink>
-    )
+  return (
+    <NavLink to={`/page/${id}`} className='pageButton' >
+      {page === id.toString() ?
+        <Button label={id + 1} className='p-button-raised' /> :
+        <Button label={id + 1} className='p-button-outlined' />}
+    </NavLink>
+  );
 }
 
-export default Page
+export default Page;
