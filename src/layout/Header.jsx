@@ -10,13 +10,17 @@ export const Header = () => {
     const navigate = useNavigate()
     const setActiveIndex = (item) => {
         setIndex(item.id);
+        localStorage.setItem('activePage', JSON.stringify(item))
         if (item.label === 'Favourite') {
             navigate('/favourite')
         } else {
             navigate('/')
         }
     }
-    const [index, setIndex] = useState(0)
+    const firstIndex = () => {
+        return localStorage.getItem('activePage') ? JSON.parse(localStorage.getItem('activePage')).id : 0
+    }
+    const [index, setIndex] = useState(firstIndex())
 
     return (
         <div>

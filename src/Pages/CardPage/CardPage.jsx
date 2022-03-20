@@ -6,6 +6,7 @@ import './CardPage.css'
 import preloader from '../../assets/preloader.gif'
 
 function CardPage() {
+
     const { itemId } = useParams();
     const [beer, setBeer] = useState([])
     const [loading, setLoading] = useState(true)
@@ -63,7 +64,7 @@ function CardPage() {
                 </div>
             </div>
         </div>
-    ) :  <img src={preloader} alt="loading..." className='cardPage__preloader' />
+    ) : <img src={preloader} alt="loading..." className='cardPage__preloader' />
 }
 
 export default CardPage
