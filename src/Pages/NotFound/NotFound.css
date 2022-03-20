@@ -1,0 +1,13 @@
+.notfound h1 {
+    font-family: 'Teko', sans-serif;
+    font-size: 220px;
+    text-align: center;
+    margin: 0;
+}
+
+.notfound h2 {
+    margin: 0;
+    font-family: 'Teko', sans-serif;
+    font-size: 60px;
+    text-align: center;
+}

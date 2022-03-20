@@ -23,10 +23,8 @@ export const Header = () => {
     const [index, setIndex] = useState(firstIndex())
 
     return (
-        <div>
-            <div className="header">
-                <TabMenu model={items} activeIndex={index} onTabChange={(e) => setActiveIndex(e.value)} />
-            </div>
+        <div className="header">
+            <TabMenu model={items} activeIndex={index} onTabChange={(e) => setActiveIndex(e.value)} />
         </div>
     );
 }

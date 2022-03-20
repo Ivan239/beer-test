@@ -6,7 +6,7 @@ function Page(props) {
     const { id, page } = props
 
     return (
-        <NavLink to={`/${id}`} className='pageButton' >
+        <NavLink to={`/page/${id}`} className='pageButton' >
             {page === id.toString() ? <Button label={id+1} className='p-button-raised' /> :
             <Button label={id+1} className='p-button-outlined' />}
         </NavLink>
